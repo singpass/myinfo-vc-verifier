@@ -28,16 +28,25 @@ var MyInfoVcVerifier = require('myinfo-vc-verifier');
 ```
 
 ### Verify
-
+This method takes in the verifiable credential to verify and return true/false.
 ```
-MyInfoVcVerifier.verify(verifiableCredential);
-//
+/**
+ * [Verify Verifiable Credential]
+ * @param  {[Object]} signedVC [verifiable credential]
+ * @return {[Boolean]}      [verified status]
+ */
+MyInfoVcVerifier.verify(signedVC); //true/false
 ```
 
 ### Get Revoke Status
-
+Performs revocation status checks on the VC's credentialStatus and return true/false.
 ```
-MyInfoVcVerifier.getRevokeStatus(verifiableCredential); // true/false
+/**
+ * [Get Revoke Status]
+ * @param  {[Object]} signedVC [signed verifiable credential]
+ * @return {[Boolean]}      [the revoke status]
+ */
+MyInfoVcVerifier.getRevokeStatus(signedVC); // true/false
 ```
 
 ## Reporting Issue

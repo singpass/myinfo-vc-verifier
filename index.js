@@ -8,7 +8,7 @@ let MyInfoVcVerifier = {};
 
 /**
  * [Get Document Loader]
- * @param  {[String]} url [url]
+ * @param  {[String]} url [context url]
  * @return {[Object]}      [documentloader]
  */
 async function getDocumentLoader() {
@@ -110,7 +110,7 @@ async function checkRevokeStatus(encoded, listIndex) {
 
 /**
  * [Get Revoke Status]
- * @param  {[Object]} signedVC [signed verifiable credential]
+ * @param  {[Object]} signedVC [verifiable credential]
  * @return {[Boolean]}      [the revoke status]
  */
 MyInfoVcVerifier.getRevokeStatus = async function (signedVC) {
