@@ -57,32 +57,34 @@ MyInfoVcVerifier.getEncodedList = async function (signedVC) {
   return new Promise((resolve, reject) => {
     let data = [];
     let encodedList = "";
-    https.get(signedVC['credentialStatus']['id'], response => {
-      response.on('data', chunk => {
-        data.push(chunk);
-      })
-      response.on('end', async() => {
-        let cs = JSON.parse(Buffer.concat(data).toString());
+    https
+      .get(signedVC["credentialStatus"]["id"], (response) => {
+        response.on("data", (chunk) => {
+          data.push(chunk);
+        });
+        response.on("end", async () => {
+          let cs = JSON.parse(Buffer.concat(data).toString());
 
-        let verifiedCS = await verify(cs);
-        if (verifiedCS.verified) {
-          encodedList = cs.credentialSubject.encodedList;
-        } else {
-          reject("ERROR: Fail to verify credentialStatus");
-        }
+          let verifiedCS = await verify(cs);
+          if (verifiedCS.verified) {
+            encodedList = cs.credentialSubject.encodedList;
+          } else {
+            reject("ERROR: Fail to verify credentialStatus");
+          }
 
-        resolve(encodedList);
+          resolve(encodedList);
+        });
       })
-    }).on('error', err => {
-      reject(err);
-    });
-  })
-}
+      .on("error", (err) => {
+        reject(err);
+      });
+  });
+};
 
 /**
  * [Verify Verifiable Credential]
  * @param  {[Object]} signedVC [signed verifiable credential]
- * @return {[Boolean]}      [verified status]
+ * @return {[Object]}      [verified status]
  */
 MyInfoVcVerifier.verify = async function (signedCredential) {
   let documentLoader = await getDocumentLoader();
@@ -123,7 +125,7 @@ MyInfoVcVerifier.getRevokeStatus = async function (signedVC) {
 };
 
 /**
- * [Signing Ethereum]
+ * [Ethereum Signing Message]
  * @param  {[Object]} privateKey [the private key]
  * @param  {[Object]} message [the message]
  * @return {[String]}      [the signature]

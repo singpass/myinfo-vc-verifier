@@ -1,7 +1,5 @@
 # MyInfo VC Verifier
 
-[![Known Vulnerabilities](https://snyk.io/test/github/singpass/myinfo-vc-verifier/badge.svg)](https://snyk.io/test/github/singpass/myinfo-vc-verifier)
-
 MyInfo VC Verifier aims to simplify consumer's integration effort with MyInfoBiz Corporate VC.
 This package provides the functionality to verify a verifiable credential using @mattrglobal jsonld-signatures-bbs.
 
@@ -28,18 +26,22 @@ var MyInfoVcVerifier = require('myinfo-vc-verifier');
 ```
 
 ### Verify
+
 This method takes in the verifiable credential to verify and return true/false.
+
 ```
 /**
  * [Verify Verifiable Credential]
  * @param  {[Object]} signedVC [verifiable credential]
- * @return {[Boolean]}      [verified status]
+ * @return {[Object]}      [verified status]
  */
-MyInfoVcVerifier.verify(signedVC); //true/false
+MyInfoVcVerifier.verify(signedVC); // { verified: true, results: [ { proof: [Object], verified: true } ] }
 ```
 
 ### Get Revoke Status
+
 Performs revocation status checks on the VC's credentialStatus and return true/false.
+
 ```
 /**
  * [Get Revoke Status]
@@ -47,6 +49,20 @@ Performs revocation status checks on the VC's credentialStatus and return true/f
  * @return {[Boolean]}      [the revoke status]
  */
 MyInfoVcVerifier.getRevokeStatus(signedVC); // true/false
+```
+
+### Signing Ethereum
+
+Generates signature for code challenges. Returns String.
+
+```
+/**
+ * [Ethereum Signing Message]
+ * @param  {[Object]} privateKey [the private key]
+ * @param  {[Object]} message [the message]
+ * @return {[String]}      [the signature]
+ */
+MyInfoVcVerifier.ethereumSign(privateKey, message);
 ```
 
 ## Reporting Issue
