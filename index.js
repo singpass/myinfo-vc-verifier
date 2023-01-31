@@ -65,7 +65,7 @@ MyInfoVcVerifier.getEncodedList = async function (signedVC) {
         response.on("end", async () => {
           let cs = JSON.parse(Buffer.concat(data).toString());
 
-          let verifiedCS = await verify(cs);
+          let verifiedCS = await this.verify(cs);
           if (verifiedCS.verified) {
             encodedList = cs.credentialSubject.encodedList;
           } else {
