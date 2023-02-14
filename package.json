@@ -1,16 +1,16 @@
 {
   "name": "myinfo-vc-verifier",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This package provides the functionality to verify a verifiable credential using @mattrglobal jsonld-signatures-bbs.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "jest"
   },
   "dependencies": {
     "@mattrglobal/jsonld-signatures-bbs": "^1.1.0",
     "@transmute/compressable-bitstring": "^0.7.0-unstable.66",
-    "follow-redirects": "^1.15.2",
     "ethereumjs-util": "^7.1.5",
+    "follow-redirects": "^1.15.2",
     "jsonld-signatures": "^7.0.0"
   },
   "overrides": {
@@ -18,5 +18,8 @@
     "jsonld": "^4.0.0"
   },
   "author": "myinfo",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.3"
+  }
 }
