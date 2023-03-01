@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://w3id.org/security/bbs/v1",
+    "https://www.w3.org/2018/credentials/v1",
+    "https://stg.issuer.myinfo.gov.sg/myinfobusiness/schema/corporatebasicdetails/v1",
+    "https://w3id.org/vc/status-list/2021/v1"
+  ],
+  "id": "https://stg.issuer.myinfo.gov.sg/myinfobusiness/credentials/c1c4e84b-808e-4ade-a62b-7b87421f6d94",
+  "type": ["VerifiableCredential"],
+  "issuer": "did:web:stg.issuer.myinfo.gov.sg:myinfobusiness",
+  "credentialSubject": {
+    "uen": "198102460H",
+    "companyname": "Exclude Co Ltd",
+    "type": ["CorporateBasicDetails"],
+    "id": "did:ethr:0x9F2f481939c8b6Dd3d879f8332Ae3E49Db08b777"
+  },
+  "expirationDate": "2023-11-01T06:45:43Z",
+  "credentialStatus": {
+    "id": "https://stg.issuer.myinfo.gov.sg/myinfobusiness/status/1#355",
+    "type": "StatusList2021Entry",
+    "statusListIndex": 355,
+    "statusListCredential": "https://stg.issuer.myinfo.gov.sg/myinfobusiness/status/1/355"
+  },
+  "issuanceDate": "2023-02-16T04:05:05Z",
+  "proof": {
+    "type": "BbsBlsSignature2020",
+    "created": "2023-02-16T04:05:05Z",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "h6E7R5ueoseVq1Rw5uz/y9yursd6liwu5yA1E0gYgmU4bEFp1HpDdc2VATz4DiR2AOsycy9YSn0uRupN6Mu8eR6fnEnqbmMdzk0+YoeSfm8kYcw6KCUWo+jNHocsjU6gWYij6ltdkmjHVP4IprzXjg==",
+    "verificationMethod": "did:web:stg.issuer.myinfo.gov.sg:myinfobusiness#3528f2ef-d97f-4731-963d-484b1cc2e305"
+  }
+}

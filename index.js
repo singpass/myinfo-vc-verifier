@@ -105,7 +105,6 @@ MyInfoVcVerifier.verify = async function (signedCredential) {
 async function checkRevokeStatus(encoded, listIndex) {
   let decodedList = await bs.Bitstring.decodeBits({ encoded });
   const bitstring = new bs.Bitstring({ buffer: decodedList });
-  console.log("bitstring length: " + bitstring.length);
   let result = bitstring.get(listIndex);
   return result;
 }
@@ -117,8 +116,6 @@ async function checkRevokeStatus(encoded, listIndex) {
  */
 MyInfoVcVerifier.getRevokeStatus = async function (signedVC) {
   let encoded = await this.getEncodedList(signedVC);
-  console.log("encoded:", encoded);
-  console.log("listindex:", signedVC.credentialStatus.statusListIndex);
   let result = await checkRevokeStatus(encoded, signedVC.credentialStatus.statusListIndex);
 
   return result;
