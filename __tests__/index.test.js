@@ -45,7 +45,6 @@ describe('Test VC verifier', () => {
   it('should validate revoke status successfully', async () => {
 
     const result = await MyInfoVcVerifier.getRevokeStatus(signedVC);
-    console.log(result);
 
     expect(result).toStrictEqual(false);
   }, 10000);
@@ -60,7 +59,6 @@ describe('Test VC verifier', () => {
   it('should validate revoke status as revoked', async () => {
 
     const result = await MyInfoVcVerifier.getRevokeStatus(revokedVC);
-    console.log(result);
 
     expect(result).toStrictEqual(true);
   }, 10000);
