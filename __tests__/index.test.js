@@ -3,7 +3,10 @@ const MyInfoVcVerifier = require('../index.js');
 
 //stub data
 const signedVC = require('./signedVC.json');
+const invalidVC = require('./invalidVC.json');
+const revokedVC = require('./revokedVC.json');
 const verifyresult = require("./result.json");
+const verifyresultfail = require("./result-bad.json");
 
 let now = new Date().toLocaleString('en-US', {
   timeZone: 'Asia/Singapore',
@@ -30,7 +33,7 @@ describe('Test VC verifier', () => {
     jest.restoreAllMocks();
   });
 
-  it('verify VC successfully', async () => {
+  it('should verify VC successfully', async () => {
 
     const result = await MyInfoVcVerifier.verify(signedVC);
 
@@ -39,11 +42,26 @@ describe('Test VC verifier', () => {
     expect(result).toStrictEqual(testRes);
   }, 10000);
 
-  it('revoke status check', async () => {
+  it('should validate revoke status successfully', async () => {
 
     const result = await MyInfoVcVerifier.getRevokeStatus(signedVC);
     console.log(result);
 
     expect(result).toStrictEqual(false);
+  }, 10000);
+
+  it('should verify VC fail', async () => {
+
+    const result = await MyInfoVcVerifier.verify(invalidVC);
+
+    expect(result.verified).toStrictEqual(false);
+  }, 10000);
+
+  it('should validate revoke status as revoked', async () => {
+
+    const result = await MyInfoVcVerifier.getRevokeStatus(revokedVC);
+    console.log(result);
+
+    expect(result).toStrictEqual(true);
   }, 10000);
 });

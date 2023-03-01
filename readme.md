@@ -3,6 +3,8 @@
 MyInfo VC Verifier aims to simplify consumer's integration effort with MyInfoBiz Corporate VC.
 This package provides the functionality to verify a verifiable credential using @mattrglobal jsonld-signatures-bbs.
 
+![latest version](https://img.shields.io/github/package-json/v/singpass/myinfo-vc-verifier) ![ci workflow](https://img.shields.io/github/actions/workflow/status/singpass/myinfo-vc-verifier/ci.yml)
+
 ## Contents
 
 - [Install](#install)
