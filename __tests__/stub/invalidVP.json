@@ -1,0 +1,46 @@
+{
+  "@context": ["https://www.w3.org/2018/credentials/v1"],
+  "id": "http://example.org/presentations/3731",
+  "type": ["VerifiablePresentation"],
+  "holder": "did:key:z6Mkk7yqnGF3YwTrLpqrW6PGsKci7dNqh1CjnvMbzrMerSeL",
+  "verifiableCredential": [
+    {
+      "@context": [
+        "https://w3id.org/security/bbs/v1",
+        "https://www.w3.org/2018/credentials/v1",
+        "https://dev.issuer.myinfo.gov.sg/myinfo/schema/ageover/v1",
+        "https://w3id.org/vc/status-list/2021/v1"
+      ],
+      "id": "https://dev.issuer.myinfo.gov.sg/myinfo20230401/credentials/77beba65-ca08-451d-a734-510e97af4111",
+      "type": ["VerifiableCredential"],
+      "issuer": "did:web:dev.issuer.myinfo.gov.sg:myinfo20230401",
+      "credentialSubject": {
+        "AtLeast18YearsOld": "Y",
+        "AtLeast21YearsOld": "Y",
+        "type": ["AgeOver"],
+        "id": "did:key:z6Mkk7yqnGF3YwTrLpqrW6PGsKci7dNqh1CjnvMbzrMerSeL"
+      },
+      "credentialStatus": {
+        "id": "https://dev.issuer.myinfo.gov.sg/myinfo20230401/status/1#23",
+        "type": "StatusList2021Entry",
+        "statusListIndex": 23,
+        "statusListCredential": "https://dev.issuer.myinfo.gov.sg/myinfo20230401/status/1/23"
+      },
+      "issuanceDate": "2023-04-14T04:10:13Z",
+      "proof": {
+        "type": "BbsBlsSignature2020",
+        "created": "2023-04-14T04:10:14Z",
+        "proofPurpose": "assertionMethod",
+        "proofValue": "rK04tWo3McqCsNBMGf6JPA0/xBm2SB+ucHKGWebbNzP3+OIYPPKYaVmHwmj+2ze4GLN53dZNET8LsfuL9tXJCDRASJLhh93WqAndU11ewps7zO4wf3HRGs6OaEV8Cy8U0KcIfrDNFAlC91xtRTNCOg==",
+        "verificationMethod": "did:web:dev.issuer.myinfo.gov.sg:myinfo20230401#92aa0761-199a-4b49-b812-9730b3e5116b"
+      }
+    }
+  ],
+  "proof": {
+    "type": "Ed25519Signature2018",
+    "created": "2023-04-17T06:16:04Z",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "did:key:z6Mkk7yqnGF3YwTrLpqrW6PGsKci7dNqh1CjnvMbzrMerSeL#z6Mkk7yqnGF3YwTrLpqrW6PGsKci7dNqh1CjnvMbzrMerSeL",
+    "jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..gKTuoB4uCMIdni3WjPfSNCneIAY7dUF5ijVMpTq5_ixNXRpcmz8OsuthMEE_PKSRaKP5qwjCn3nRtdnEeeLnDw"
+  }
+}
