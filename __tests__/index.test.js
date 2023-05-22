@@ -10,6 +10,7 @@ const signedVP = require("./stub/signedVP.json");
 const invalidVP = require("./stub/invalidVP.json");
 const verifyPresentationResult = require("./stub/resultPresentation.json");
 const vpVcResult = require("./stub/resultVPVC.json");
+const signedSDVC = require("./stub/signedSelectiveDisclosedVC.json");
 
 let now = new Date().toLocaleString("en-US", {
   timeZone: "Asia/Singapore",
@@ -79,5 +80,10 @@ describe("Test VC verifier", () => {
   it("should verify VP and VC successfully", async () => {
     const result = await MyInfoVcVerifier.verify(signedVP);
     expect(result).toStrictEqual(vpVcResult);
+  }, 10000);
+
+  it("should verify selective disclosed VC successfully", async () => {
+    const result = await MyInfoVcVerifier.verify(signedSDVC);
+    expect(result.verified).toStrictEqual(true);
   }, 10000);
 });

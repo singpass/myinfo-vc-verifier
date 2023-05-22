@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://dev.issuer.myinfo.gov.sg/myinfobusiness/schema/corporatebasicdetails/v1",
+    "https://w3id.org/security/bbs/v1"
+  ],
+  "id": "https://dev.issuer.myinfo.gov.sg/myinfobusiness/credentials/639053a1-b3c2-4dfe-8054-10d9f74fea4c",
+  "type": "VerifiableCredential",
+  "credentialStatus": {
+    "id": "https://dev.issuer.myinfo.gov.sg/myinfobusiness/status/1#32",
+    "type": "https://w3id.org/vc/status-list#StatusList2021Entry",
+    "https://w3id.org/vc/status-list#statusListCredential": {
+      "id": "https://dev.issuer.myinfo.gov.sg/myinfobusiness/status/1/32"
+    },
+    "https://w3id.org/vc/status-list#statusListIndex": {
+      "type": "http://www.w3.org/2001/XMLSchema#integer",
+      "@value": "32"
+    }
+  },
+  "credentialSubject": null,
+  "proof": {
+    "type": "BbsBlsSignatureProof2020",
+    "created": "2023-01-31T07:38:33Z",
+    "nonce": "L6wIzdBn38hgoSrT52iYQkVZ19Z446bs2rk+f9HKZsqDivWQznMTdU+ye/3QVtW6slI=",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "AAwOP4UoiheZXJ9R281BSnxyciXpzKHrySdolHp9kwWRoaTLVju2K7+fRFW0tNSR8y2rpYKUjFy13i/IFewCuGFqCFlvhv7lRh7HZreeWley4d7GrmIo6y7rHNbJVEcuqayohIVe2WU+h+7QxKQeUtwGvfeS5ltYsW18pkbc2GefQ6AZfVO/DS+FiMXefpIubeIxQQAAAHSmsAXTQfPF8IRTGaUja6487XC+T5pQmINOldudK6SVaAtmaCUwHQRXLqrAuJiKqvcAAAACGU+H3lQCqy8kSlpcqG57F5daPlrEJvEfliOacathWrMyRs8wYaNQ2CpZxC41OpFjSrLsXoEAwFjfFgI/+JgPT69MsS2EV/B3kqrIQCDQWWHrrGx5+xS1wx4UdbdHkChZPDmOf6eHDiiI7gNFjRIESAAAAAVSTm0HO4U/JibxQmAatzsplF/lfY1g66x3jzOgrBoEaxEceACI6X4RHf4masHh+JJoLy4iX5qP6nLVdfcRZ3uZO1A8avbIC2OMVGeaewlYhVdtw4JxIeLOhq3Vgc+q67JCEuckRh0mLZsCSvzP1VdTg4F1fe9js2pPFG0eWg099nOWx6KJ3EiiKDLxR5haT5G5RIZcYqo6BlR4MZrtDINw",
+    "verificationMethod": "did:web:dev.issuer.myinfo.gov.sg:myinfobusiness#a576698e-8afd-40fa-846b-6a281127fee6"
+  }
+}

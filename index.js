@@ -163,6 +163,28 @@ MyInfoVcVerifier.verify = async function (signedDocument) {
  */
 MyInfoVcVerifier.verifyCredential = async function (credential) {
   let documentLoader = await getDocumentLoader();
+  let suite;
+
+  if (credential.proof.type == "BbsBlsSignature2020") {
+    suite = new bbs.BbsBlsSignature2020();
+  } else {
+    suite = new bbs.BbsBlsSignatureProof2020();
+  }
+
+  return await jsonldSignatures.verify(credential, {
+    suite: suite,
+    purpose: new jsonldSignatures.purposes.AssertionProofPurpose(),
+    documentLoader,
+  });
+};
+
+/**
+ * [Verify Verifiable Credential]
+ * @param  {[Object]} credential [signed verifiable credential]
+ * @return {[Object]}      [verified status]
+ */
+MyInfoVcVerifier.verifySelectiveDisclosedCredential = async function (credential) {
+  let documentLoader = await getDocumentLoader();
 
   return await jsonldSignatures.verify(credential, {
     suite: new bbs.BbsBlsSignature2020(),
