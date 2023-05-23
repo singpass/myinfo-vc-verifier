@@ -3,6 +3,13 @@ const { https } = require("follow-redirects");
 const bs = require("@transmute/compressable-bitstring");
 const bbs = require("@mattrglobal/jsonld-signatures-bbs");
 const ethereumjs = require("ethereumjs-util");
+const didkit = require("@spruceid/didkit-wasm-node");
+const bs58 = require("bs58");
+
+let documents = {
+  "https://w3id.org/security/bbs/v1": require("./contextData/w3id-sec-bbs-v1.json"),
+  "https://w3id.org/did/v0.11": require("./contextData/w3id-did-v0.11.json"),
+};
 
 let MyInfoVcVerifier = {};
 
@@ -13,9 +20,31 @@ let MyInfoVcVerifier = {};
  */
 async function getDocumentLoader() {
   const customDocLoader = async (url) => {
-    return new Promise((resolve, reject) => {
-      //console.log(url);
-      if (url.includes("did:")) {
+    return new Promise(async (resolve, reject) => {
+      if (documents[url]) {
+        // Fix missing context
+        let resolveContext = {
+          contextUrl: null, // this is for a context via a link header
+          document: documents[url], // this is the actual document that was loaded
+          documentUrl: url, // this is the actual context URL after redirects
+        };
+        resolve(resolveContext);
+        return;
+      }
+      if (url.includes("did:key")) {
+        if (url.includes("#")) {
+          url = url.slice(0, url.indexOf("#"));
+        }
+        const didDocument = await didKeyResolver(url);
+        let resolveContext = {
+          contextUrl: null, // this is for a context via a link header
+          document: didDocument, // this is the actual document that was loaded
+          documentUrl: url, // this is the actual context URL after redirects
+        };
+        resolve(resolveContext);
+        return;
+      }
+      if (url.includes("did:web")) {
         if (url.includes("#")) {
           url = url.slice(0, url.indexOf("#"));
         }
@@ -30,8 +59,6 @@ async function getDocumentLoader() {
             data.push(chunk);
           });
           response.on("end", () => {
-            //console.log(response.responseUrl);
-            //console.log(JSON.parse(Buffer.concat(data).toString()))
             let resolveContext = {
               contextUrl: null, // this is for a context via a link header
               document: JSON.parse(Buffer.concat(data).toString()), // this is the actual document that was loaded
@@ -46,6 +73,29 @@ async function getDocumentLoader() {
     });
   };
   return jsonldSignatures.extendContextLoader(customDocLoader);
+}
+
+// did:key resolver for Ed25519 key
+async function didKeyResolver(did) {
+  let didDocument = await didkit.resolveDID(did, "{}");
+  didDocument = JSON.parse(didDocument);
+  let publicKey = Buffer.from(didDocument.verificationMethod[0].publicKeyJwk.x, "base64url");
+  let publicKeyBase58 = bs58.encode(publicKey);
+
+  let publicKeyItem = {
+    controller: didDocument.verificationMethod[0].controller,
+    id: didDocument.verificationMethod[0].id,
+    type: didDocument.verificationMethod[0].type,
+    publicKeyBase58: publicKeyBase58,
+  };
+  let context = ["https://w3id.org/did/v0.11"];
+  let cloneDocument = {
+    id: didDocument.id,
+    assertionMethod: didDocument.assertionMethod,
+    "@context": context,
+    verificationMethod: [publicKeyItem],
+  };
+  return cloneDocument;
 }
 
 /**
@@ -83,17 +133,58 @@ MyInfoVcVerifier.getEncodedList = async function (signedVC) {
 
 /**
  * [Verify Verifiable Credential]
- * @param  {[Object]} signedVC [signed verifiable credential]
+ * @param  {[Object]} signedDocument [signed verifiable credential OR signed verifiable Presentation]
  * @return {[Object]}      [verified status]
  */
-MyInfoVcVerifier.verify = async function (signedCredential) {
-  let documentLoader = await getDocumentLoader();
+MyInfoVcVerifier.verify = async function (signedDocument) {
+  if (signedDocument.type.includes("VerifiableCredential")) {
+    // Verify credential
+    return this.verifyCredential(signedDocument);
+  } else if (signedDocument.type.includes("VerifiablePresentation")) {
+    let result = await this.verifyPresentation(signedDocument);
+    if (result.verified) {
+      let credentials = signedDocument.verifiableCredential;
+      let verifyPromises = [];
+      for (let credential of credentials) {
+        verifyPromises.push(this.verifyCredential(credential));
+      }
+      let results = await Promise.all(verifyPromises);
+      return results;
+    } else {
+      return result;
+    }
+  }
+};
 
-  return await jsonldSignatures.verify(signedCredential, {
-    suite: new bbs.BbsBlsSignature2020(),
+/**
+ * [Verify Verifiable Credential]
+ * @param  {[Object]} credential [signed verifiable credential]
+ * @return {[Object]}      [verified status]
+ */
+MyInfoVcVerifier.verifyCredential = async function (credential) {
+  let documentLoader = await getDocumentLoader();
+  let suite = [new bbs.BbsBlsSignature2020(), new bbs.BbsBlsSignatureProof2020()];
+
+  return await jsonldSignatures.verify(credential, {
+    suite: suite,
     purpose: new jsonldSignatures.purposes.AssertionProofPurpose(),
     documentLoader,
   });
+};
+
+/**
+ * [Verify Verifiable Presentation]
+ * @param  {[Object]} presentation [signed verifiable presentation]
+ * @return {[Object]}      [verified status]
+ */
+MyInfoVcVerifier.verifyPresentation = async function (presentation) {
+  let documentLoader = await getDocumentLoader();
+  const result = await jsonldSignatures.verify(presentation, {
+    suite: new jsonldSignatures.suites.Ed25519Signature2018(),
+    purpose: new jsonldSignatures.purposes.AssertionProofPurpose(),
+    documentLoader,
+  });
+  return result;
 };
 
 /**

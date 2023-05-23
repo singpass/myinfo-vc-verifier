@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://w3id.org/security/bbs/v1",
+    "https://www.w3.org/2018/credentials/v1",
+    "https://stg.issuer.myinfo.gov.sg/myinfo/schema/ageover/v1",
+    "https://w3id.org/vc/status-list/2021/v1"
+  ],
+  "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/credentials/e472790a-8e09-4ee5-9d80-7f7b48367927",
+  "type": ["VerifiableCredential"],
+  "issuer": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01",
+  "credentialSubject": {
+    "AtLeast18YearsOld": "Y",
+    "AtLeast21YearsOld": "Y",
+    "type": ["AgeOver"],
+    "id": "did:key:z6Mkop5VhDHUqdceTr9u9Zwb7JGctDepXfh7hRDPmXV7XC7T"
+  },
+  "credentialStatus": {
+    "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1#10",
+    "type": "StatusList2021Entry",
+    "statusListIndex": 10,
+    "statusListCredential": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1/10"
+  },
+  "issuanceDate": "2023-05-17T07:20:17Z",
+  "proof": {
+    "type": "BbsBlsSignatureProof2020",
+    "created": "2023-05-17T07:20:17Z",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01#21402a47-6416-4b95-b180-dff0e1f44d67",
+    "nonce": "nVcykKukR5H4twQiqx4gxny2V17twhjR24OZSw6jKos=\n",
+    "proofValue": "AA9//4a54bfSbSO+TYYK5iVdNryBV/j1tk2zQAe1fD1ikLxkvHO+FA3VcCU2Xb0Jxcf4vqA5Gd9b\nVw+HVD5VzXRVQFLM3YUprqbGXIfkX64N/b0cWKuNsH7hLCs0YUYuHbVos5Ce0NHnTONk2HNUv47T\nM1cac1rDAqGxS11O8TQuT/oLkzAPKXEP9NHtnIe+j41DigAAAHSJtHmSZeGAOBgl7tJO9hq7pz40\n+NQKLdaBhOM3fEpC3LpiUZMWrOcUfkN/qvJcY4UAAAACOso3milYBzWsf8dsO5C4QIOHnC7T0LPN\nU2xGhkHXC74xsIzNvANcEGqomAJdqmudDtRhaTgbComzLsIaEEQhEJMlfw1jQeRxVQG8iT+Qy5oQ\n1vUuJV06GfrUT2HwZ+WcYHFiULRwDb7izsBjd6FIaQAAAAIdnFGZIKqFPr+s+qMhzdAGL4vsOLhO\n1R4k+4Zaw5y2yQuh06gr6GVU0JMqyQBgX/JLxXNBECWZFp3Imjnen+Bt\n"
+  }
+}
