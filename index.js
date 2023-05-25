@@ -17,7 +17,7 @@ let revokeStatusCache = {};
 
 /**
  * [Get Document Loader]
- * @param  {[Object]} OPTIONAL: Array of context object [context object]
+ * @param  {Object} OPTIONAL: Array of context object [context object]
  * @return {Promise} [documentloader]
  */
 async function getDocumentLoader(customDocuments = []) {
@@ -170,7 +170,7 @@ MyInfoVcVerifier.getEncodedList = async function (signedVC, opts) {
 /**
  * [Verify Verifiable Credential]
  * @param  {Object} signedDocument [signed verifiable credential OR signed verifiable Presentation]
- * @param  {[Object]} OPTIONAL: Array of context object [context object]
+ * @param  {Object} OPTIONAL: Array of context object [context object]
  * @return {Promise} Promise object represents verification result [verified status]
  */
 MyInfoVcVerifier.verify = async function (signedDocument, customDocuments) {
@@ -196,7 +196,7 @@ MyInfoVcVerifier.verify = async function (signedDocument, customDocuments) {
 /**
  * [Verify Verifiable Credential]
  * @param  {Object} Verifiable Credential object [signed verifiable credential]
- * @param  {[Object]} OPTIONAL: Array of context object [context object]
+ * @param  {Object} OPTIONAL: Array of context object [context object]
  * @return {Promise} Promise object represents verification result [verified status]
  */
 MyInfoVcVerifier.verifyCredential = async function (credential, customDocuments) {
