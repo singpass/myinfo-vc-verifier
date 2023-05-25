@@ -1,6 +1,6 @@
 {
   "name": "myinfo-vc-verifier",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "This package provides the functionality to verify a verifiable credential using @mattrglobal jsonld-signatures-bbs.",
   "main": "index.js",
   "scripts": {

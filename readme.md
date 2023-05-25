@@ -9,7 +9,7 @@ This package provides the functionality to verify a verifiable credential using 
 
 - [Install](#install)
 - [Usage](#usage)
-- [Change Logs](./CHANGELOG.md)
+- [Change Logs](https://github.com/singpass/myinfo-vc-verifier/blob/master/CHANGELOG.md)
 
 ## Install
 
@@ -35,7 +35,7 @@ This method takes in the verifiable credential to verify and return true/false.
 /**
  * [Verify Verifiable Credential]
  * @param  {[Object]} signedVC [verifiable credential]
- * @return {[Object]}      [verified status]
+ * @return Promise {[Object]}      [verified status]
  */
 MyInfoVcVerifier.verify(signedVC); // { verified: true, results: [ { proof: [Object], verified: true } ] }
 ```
@@ -48,7 +48,7 @@ Performs revocation status checks on the VC's credentialStatus and return true/f
 /**
  * [Get Revoke Status]
  * @param  {[Object]} signedVC [signed verifiable credential]
- * @return {[Boolean]}      [the revoke status]
+ * @return Promise {[Boolean]}      [the revoke status]
  */
 MyInfoVcVerifier.getRevokeStatus(signedVC); // true/false
 ```

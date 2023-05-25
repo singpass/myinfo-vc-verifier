@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.05 25 May 2023:
+
+- Add LICENSE file
+- Added cache functionality to context documents and revoke status
+- Change verify function to add OPTIONAL customDocuments
+- Change getRevokeStatus to add OPTIONAL opts to allow refreshCache
+
 ## 0.0.4 22 May 2023:
 
 - Add verify Verifiable Presentation function

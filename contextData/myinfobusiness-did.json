@@ -1,0 +1,12 @@
+{
+  "@context": ["https://www.w3.org/ns/did/v1", "https://w3id.org/security/v2"],
+  "id": "did:web:dev.issuer.myinfo.gov.sg:myinfobusiness",
+  "assertionMethod": [
+    {
+      "id": "did:web:dev.issuer.myinfo.gov.sg:myinfobusiness#a576698e-8afd-40fa-846b-6a281127fee6",
+      "type": "Bls12381G2Key2020",
+      "controller": "did:web:dev.issuer.myinfo.gov.sg:myinfobusiness",
+      "publicKeyBase58": "24SbZA69e4pk5av4Xa3B4NARD47FuCQsspGJdotDfjuQfLpX9obiK43j7pNDa8F1h8YL4UeqW8M7SxQftuVhcbfQrBGNi5GPCQJANRzxydKHXGCS4YopNnxoixFtiLckb4ut"
+    }
+  ]
+}
