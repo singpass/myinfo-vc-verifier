@@ -34,10 +34,11 @@ This method takes in the verifiable credential to verify and return true/false.
 ```
 /**
  * [Verify Verifiable Credential]
- * @param  {[Object]} signedVC [verifiable credential]
- * @return Promise {[Object]}      [verified status]
+ * @param  {Object} signedDocument [signed verifiable credential OR signed verifiable Presentation]
+ * @param  {Object} OPTIONAL: Array of context object [context object]
+ * @return {Promise} Promise object represents verification result [verified status]
  */
-MyInfoVcVerifier.verify(signedVC); // { verified: true, results: [ { proof: [Object], verified: true } ] }
+MyInfoVcVerifier.verify(signedDocument, customDocuments) // { verified: true, results: [ { proof: [Object], verified: true } ] }
 ```
 
 ### Get Revoke Status
@@ -47,10 +48,11 @@ Performs revocation status checks on the VC's credentialStatus and return true/f
 ```
 /**
  * [Get Revoke Status]
- * @param  {[Object]} signedVC [signed verifiable credential]
- * @return Promise {[Boolean]}      [the revoke status]
+ * @param  {Object} signedVC [verifiable credential]
+ * @param  {Object} OPTIONAL - opts: {"refreshCache": true | false} Default to false
+ * @return {Promise} Promise object represents Boolean [the revoke status]
  */
-MyInfoVcVerifier.getRevokeStatus(signedVC); // true/false
+MyInfoVcVerifier.getRevokeStatus(signedVC, opts) // true/false
 ```
 
 ### Signing Ethereum
@@ -60,9 +62,9 @@ Generates signature for code challenges. Returns String.
 ```
 /**
  * [Ethereum Signing Message]
- * @param  {[Object]} privateKey [the private key]
- * @param  {[Object]} message [the message]
- * @return {[String]}      [the signature]
+ * @param  {Object} privateKey [the private key]
+ * @param  {Object} message [the message]
+ * @return {String}      [the signature]
  */
 MyInfoVcVerifier.ethereumSign(privateKey, message);
 ```
