@@ -45,11 +45,20 @@ describe("Test VC verifier", () => {
     expect(result2).toStrictEqual(verifyresult);
   }, 15000);
 
+  it("should verify VC successfully with custom documents", async () => {
+    let customDocuments = {
+      "did:web:dev.issuer.myinfo.gov.sg:myinfobusiness": require("../contextData/myinfobusiness-did.json"),
+    };
+    const result1 = await MyInfoVcVerifier.verify(signedVC, customDocuments);
+
+    expect(result1).toStrictEqual(verifyresult);
+  }, 5000);
+
   it("should validate revoke status successfully", async () => {
     const result = await MyInfoVcVerifier.getRevokeStatus(signedVC);
 
     expect(result).toStrictEqual(false);
-  }, 10000);
+  }, 5000);
 
   it("should verify VC fail", async () => {
     const result1 = await MyInfoVcVerifier.verify(invalidVC);
@@ -57,33 +66,33 @@ describe("Test VC verifier", () => {
 
     expect(result1.verified).toStrictEqual(false);
     expect(result2.verified).toStrictEqual(false);
-  }, 15000);
+  }, 5000);
 
   it("should validate revoke status as revoked", async () => {
-    const result = await MyInfoVcVerifier.getRevokeStatus(revokedVC);
+    const result = await MyInfoVcVerifier.getRevokeStatus(revokedVC, { refreshCache: true });
 
     expect(result).toStrictEqual(true);
-  }, 10000);
+  }, 5000);
 
   it("should verify VP successfully", async () => {
     const result = await MyInfoVcVerifier.verifyPresentation(signedVP);
 
     expect(result).toStrictEqual(verifyPresentationResult);
-  }, 10000);
+  }, 5000);
 
   it("should verify VP fail", async () => {
     const result = await MyInfoVcVerifier.verifyPresentation(invalidVP);
 
     expect(result.verified).toStrictEqual(false);
-  }, 10000);
+  }, 5000);
 
   it("should verify VP and VC successfully", async () => {
     const result = await MyInfoVcVerifier.verify(signedVP);
     expect(result).toStrictEqual(vpVcResult);
-  }, 10000);
+  }, 5000);
 
   it("should verify selective disclosed VC successfully", async () => {
     const result = await MyInfoVcVerifier.verify(signedSDVC);
     expect(result.verified).toStrictEqual(true);
-  }, 10000);
+  }, 5000);
 });
