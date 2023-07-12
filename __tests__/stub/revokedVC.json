@@ -5,28 +5,27 @@
     "https://stg.issuer.myinfo.gov.sg/myinfobusiness/schema/corporatebasicdetails/v1",
     "https://w3id.org/vc/status-list/2021/v1"
   ],
-  "id": "https://stg.issuer.myinfo.gov.sg/myinfobusiness/credentials/c1c4e84b-808e-4ade-a62b-7b87421f6d94",
-  "type": ["VerifiableCredential"],
+  "id": "https://stg.issuer.myinfo.gov.sg/myinfobusiness/credentials/7bb2492b-0c7c-4640-bf89-3231040259a1",
+  "type": ["VerifiableCredential", "CorporateBasicDetailsCredential"],
   "issuer": "did:web:stg.issuer.myinfo.gov.sg:myinfobusiness",
   "credentialSubject": {
-    "uen": "198102460H",
-    "companyname": "Exclude Co Ltd",
+    "uen": "198105464C",
+    "companyname": "Extend Manufacturers Limited",
     "type": ["CorporateBasicDetails"],
     "id": "did:ethr:0x9F2f481939c8b6Dd3d879f8332Ae3E49Db08b777"
   },
-  "expirationDate": "2023-11-01T06:45:43Z",
   "credentialStatus": {
-    "id": "https://stg.issuer.myinfo.gov.sg/myinfobusiness/status/1#355",
+    "id": "https://stg.issuer.myinfo.gov.sg/myinfobusiness/status/1#415",
     "type": "StatusList2021Entry",
-    "statusListIndex": 355,
-    "statusListCredential": "https://stg.issuer.myinfo.gov.sg/myinfobusiness/status/1/355"
+    "statusListIndex": "415",
+    "statusListCredential": "https://stg.issuer.myinfo.gov.sg/myinfobusiness/status/1"
   },
-  "issuanceDate": "2023-02-16T04:05:05Z",
+  "issuanceDate": "2023-07-12T04:55:12Z",
   "proof": {
     "type": "BbsBlsSignature2020",
-    "created": "2023-02-16T04:05:05Z",
+    "created": "2023-07-12T04:55:13Z",
     "proofPurpose": "assertionMethod",
-    "proofValue": "h6E7R5ueoseVq1Rw5uz/y9yursd6liwu5yA1E0gYgmU4bEFp1HpDdc2VATz4DiR2AOsycy9YSn0uRupN6Mu8eR6fnEnqbmMdzk0+YoeSfm8kYcw6KCUWo+jNHocsjU6gWYij6ltdkmjHVP4IprzXjg==",
+    "proofValue": "gWEuIL6ffFCCFLvaM4JVqsIbpWGQWtUEGyaXTPvfJDwqt4dVBWdK4d92GMP77phhYUHlKfzccE4m7waZyoLEkBLFiK2g54Q2i+CdtYBgDdkUDsoULSBMcH1MwGHwdjfXpldFNFrHFx/IAvLVniyeMQ==",
     "verificationMethod": "did:web:stg.issuer.myinfo.gov.sg:myinfobusiness#3528f2ef-d97f-4731-963d-484b1cc2e305"
   }
 }

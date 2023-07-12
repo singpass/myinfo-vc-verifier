@@ -2,45 +2,45 @@
   "@context": ["https://www.w3.org/2018/credentials/v1"],
   "id": "http://example.org/presentations/3731",
   "type": ["VerifiablePresentation"],
-  "holder": "did:key:z6Mkk7yqnGF3YwTrLpqrW6PGsKci7dNqh1CjnvMbzrMerSeL",
+  "holder": "did:key:z6MkviRLMhsi2VDtFJENiMcbAb8zPBJGDz83catMyN7S2rgb",
   "verifiableCredential": [
     {
       "@context": [
         "https://w3id.org/security/bbs/v1",
         "https://www.w3.org/2018/credentials/v1",
-        "https://dev.issuer.myinfo.gov.sg/myinfo/schema/ageover/v1",
+        "https://stg.issuer.myinfo.gov.sg/myinfo/schema/ageover/v1",
         "https://w3id.org/vc/status-list/2021/v1"
       ],
-      "id": "https://dev.issuer.myinfo.gov.sg/myinfo20230401/credentials/77beba65-ca08-451d-a734-510e97af4111",
-      "type": ["VerifiableCredential"],
-      "issuer": "did:web:dev.issuer.myinfo.gov.sg:myinfo20230401",
+      "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/credentials/f5f19f68-3810-463f-8cdb-141aa48e4d4d",
+      "type": ["VerifiableCredential", "AgeOverCredential"],
+      "issuer": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01",
       "credentialSubject": {
-        "AtLeast18YearsOld": "Y",
-        "AtLeast21YearsOld": "Y",
+        "AtLeast18YearsOld": "N",
         "type": ["AgeOver"],
-        "id": "did:key:z6Mkk7yqnGF3YwTrLpqrW6PGsKci7dNqh1CjnvMbzrMerSeL"
+        "id": "did:key:z6MkmbvZd3XHsdti7ofTQkw1tDi9y9rEM6n1pkDDraQ9xrYW"
       },
       "credentialStatus": {
-        "id": "https://dev.issuer.myinfo.gov.sg/myinfo20230401/status/1#23",
+        "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1#9646",
         "type": "StatusList2021Entry",
-        "statusListIndex": 23,
-        "statusListCredential": "https://dev.issuer.myinfo.gov.sg/myinfo20230401/status/1/23"
+        "statusListIndex": "9646",
+        "statusListCredential": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1"
       },
-      "issuanceDate": "2023-04-14T04:10:13Z",
+      "issuanceDate": "2023-07-12T06:04:47Z",
       "proof": {
-        "type": "BbsBlsSignature2020",
-        "created": "2023-04-14T04:10:14Z",
+        "created": "2023-07-12T06:04:47Z",
         "proofPurpose": "assertionMethod",
-        "proofValue": "rK04tWo3McqCsNBMGf6JPA0/xBm2SB+ucHKGWebbNzP3+OIYPPKYaVmHwmj+2ze4GLN53dZNET8LsfuL9tXJCDRASJLhh93WqAndU11ewps7zO4wf3HRGs6OaEV8Cy8U0KcIfrDNFAlC91xtRTNCOg==",
-        "verificationMethod": "did:web:dev.issuer.myinfo.gov.sg:myinfo20230401#92aa0761-199a-4b49-b812-9730b3e5116b"
+        "verificationMethod": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01#21402a47-6416-4b95-b180-dff0e1f44d67",
+        "type": "BbsBlsSignatureProof2020",
+        "nonce": "jFH5GUADdg8igfuB6d4akCjIjPu815MNV2aBdzvdBhA=n",
+        "proofValue": "ABAA/7+L2u2nQCsPXmYde/7kDY494twd2AzECtzE+td28DrFC5o/ApGVGOZKdmR2lT8Vnwik1AeKnjME1DL9V6ZoLxqwRpKf0t/7Jj1zB2TX3S0a/lgdOrYNjF/mIKlZweHgr4UGqTqtK1sJMp/b0yR+znBOgVpyjOkdd1pMjP9P120/T3WAPuXrO0CYhuoFIZOwPQm5EAAAB0jT9KXaW4htzP3hTtoPbelCNMn8bt+7e+dnB1b0OQG97xYMwPFj+w8651uKxhu8nRUAAAAAgoEcB2TFKbGSCk3RwPXMcXMVeg84mKHnWmzBTJ86vYWoBXEJaI19y0ji3YKk4Dt8M4LzY2y9cR9RJzHxY0RKcwKWTGdXvYsQpsGMZ5wdbo19njWISewU/M8GSOAnYFFwbTlLz+tJDMJIe+k7IcoNJxeIAAAADEsYkRDoARh2XqfvsOF+H0fT+I+SEn8s5J7TsCdtRwQHcGV/MrFBM63XQkexbXyfzOcAcQnTCc8v23tjjfD/dL50L7SMB37/h20GBZ9H0YnZpE+TMK4LwiFkd1UXQST1swan"
       }
     }
   ],
   "proof": {
     "type": "Ed25519Signature2018",
-    "created": "2023-04-17T06:16:04Z",
+    "created": "2023-07-12T07:29:48Z",
     "proofPurpose": "assertionMethod",
-    "verificationMethod": "did:key:z6Mkk7yqnGF3YwTrLpqrW6PGsKci7dNqh1CjnvMbzrMerSeL#z6Mkk7yqnGF3YwTrLpqrW6PGsKci7dNqh1CjnvMbzrMerSeL",
-    "jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..gKTuoB4uCMIdni3WjPfSNCneIAY7dUF5ijVMpTq5_ixNXRpcmz8OsuthMEE_PKSRaKP5qwjCn3nRtdnEeeLnDw"
+    "verificationMethod": "did:key:z6MkviRLMhsi2VDtFJENiMcbAb8zPBJGDz83catMyN7S2rgb#z6MkviRLMhsi2VDtFJENiMcbAb8zPBJGDz83catMyN7S2rgb",
+    "jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..6MVcOV40KpeAJk_rm9R3YogNM4ae1CjYBEvIpdzshF_meCS_HnZ_JGLkDo96USAy712J-vMKRYUjIGOMX1s_AA"
   }
 }

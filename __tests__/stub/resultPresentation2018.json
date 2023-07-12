@@ -1,0 +1,32 @@
+{
+  "verified": true,
+  "results": [
+    {
+      "proof": {
+        "@context": "https://w3id.org/security/v2",
+        "type": "Ed25519Signature2018",
+        "created": "2023-07-12T09:13:45Z",
+        "jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..-9UOZ1jVRQBq9xPqY6FjPCR_ORMXCSohGV6-rH2WPnIrSAXlPQmAMoDCyvVGg_DvOm_HnBlRKbxKtzseFyJqAw",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:key:z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi#z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi"
+      },
+      "verified": true,
+      "purposeResult": {
+        "valid": true,
+        "controller": {
+          "@context": "https://w3id.org/security/v2",
+          "id": "did:key:z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi",
+          "assertionMethod": [
+            "did:key:z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi#z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi"
+          ],
+          "verificationMethod": {
+            "id": "did:key:z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi#z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi",
+            "type": "Ed25519VerificationKey2018",
+            "controller": "did:key:z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi",
+            "publicKeyBase58": "5sMyjiRDGYPo2W9XHmfZt8XvpmKwvAfEGHNKykQcEnuL"
+          }
+        }
+      }
+    }
+  ]
+}

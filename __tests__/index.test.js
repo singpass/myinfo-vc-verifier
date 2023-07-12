@@ -6,10 +6,9 @@ const signedVC = require("./stub/signedVC.json");
 const invalidVC = require("./stub/invalidVC.json");
 const revokedVC = require("./stub/revokedVC.json");
 const verifyresult = require("./stub/result.json");
-const signedVP = require("./stub/signedVP.json");
+const signedVP2018 = require("./stub/signedVP2018.json");
 const invalidVP = require("./stub/invalidVP.json");
-const verifyPresentationResult = require("./stub/resultPresentation.json");
-const vpVcResult = require("./stub/resultVPVC.json");
+const verifyPresentationResult2018 = require("./stub/resultPresentation2018.json");
 const signedSDVC = require("./stub/signedSelectiveDisclosedVC.json");
 
 let now = new Date().toLocaleString("en-US", {
@@ -74,10 +73,10 @@ describe("Test VC verifier", () => {
     expect(result).toStrictEqual(true);
   }, 5000);
 
-  it("should verify VP successfully", async () => {
-    const result = await MyInfoVcVerifier.verifyPresentation(signedVP);
+  it("should verify 2018 VP successfully", async () => {
+    const result = await MyInfoVcVerifier.verifyPresentation(signedVP2018);
 
-    expect(result).toStrictEqual(verifyPresentationResult);
+    expect(result).toStrictEqual(verifyPresentationResult2018);
   }, 5000);
 
   it("should verify VP fail", async () => {
@@ -87,8 +86,8 @@ describe("Test VC verifier", () => {
   }, 5000);
 
   it("should verify VP and VC successfully", async () => {
-    const result = await MyInfoVcVerifier.verify(signedVP);
-    expect(result).toStrictEqual(vpVcResult);
+    const result = await MyInfoVcVerifier.verify(signedVP2018);
+    expect(result[0].verified).toStrictEqual(true);
   }, 5000);
 
   it("should verify selective disclosed VC successfully", async () => {

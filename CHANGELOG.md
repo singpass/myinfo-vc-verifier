@@ -1,6 +1,11 @@
 # Changelog
 
-## 0.05 25 May 2023:
+## 0.0.6 12 Jul 2023:
+
+- Fix getRevokeStatus function to parseInt for statusListIndex if it is a String
+- Change test files
+
+## 0.0.5 25 May 2023:
 
 - Add LICENSE file
 - Added cache functionality to context documents and revoke status

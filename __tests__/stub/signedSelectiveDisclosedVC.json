@@ -5,28 +5,29 @@
     "https://stg.issuer.myinfo.gov.sg/myinfo/schema/ageover/v1",
     "https://w3id.org/vc/status-list/2021/v1"
   ],
-  "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/credentials/e472790a-8e09-4ee5-9d80-7f7b48367927",
-  "type": ["VerifiableCredential"],
-  "issuer": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01",
-  "credentialSubject": {
-    "AtLeast18YearsOld": "Y",
-    "AtLeast21YearsOld": "Y",
-    "type": ["AgeOver"],
-    "id": "did:key:z6Mkop5VhDHUqdceTr9u9Zwb7JGctDepXfh7hRDPmXV7XC7T"
-  },
+  "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/credentials/a8a0545b-768f-40eb-87e8-346476bf6dfd",
+  "type": ["AgeOverCredential", "VerifiableCredential"],
+  "description": "Sample of Age Over Credential",
+  "name": "Age Over Credential",
   "credentialStatus": {
-    "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1#10",
+    "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1#9579",
     "type": "StatusList2021Entry",
-    "statusListIndex": 10,
-    "statusListCredential": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1/10"
+    "statusListCredential": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1",
+    "statusListIndex": "9579"
   },
-  "issuanceDate": "2023-05-17T07:20:17Z",
+  "credentialSubject": {
+    "id": "did:key:z6MkndAHigYrXNpape7jgaC7jHiWwxzB3chuKUGXJg2b5RSj",
+    "type": "AgeOver",
+    "AtLeast21YearsOld": "Y"
+  },
+  "issuanceDate": "2023-07-11T07:02:08Z",
+  "issuer": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01",
   "proof": {
     "type": "BbsBlsSignatureProof2020",
-    "created": "2023-05-17T07:20:17Z",
+    "created": "2023-07-11T07:02:08Z",
+    "nonce": "iD6nH/oIk8gcg9NCe7eRFN6gmqbt0ctZx4RI0TGK4UJkr1RLHnq5Wa1B6mT4vzDFTLs=",
     "proofPurpose": "assertionMethod",
-    "verificationMethod": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01#21402a47-6416-4b95-b180-dff0e1f44d67",
-    "nonce": "nVcykKukR5H4twQiqx4gxny2V17twhjR24OZSw6jKos=\n",
-    "proofValue": "AA9//4a54bfSbSO+TYYK5iVdNryBV/j1tk2zQAe1fD1ikLxkvHO+FA3VcCU2Xb0Jxcf4vqA5Gd9b\nVw+HVD5VzXRVQFLM3YUprqbGXIfkX64N/b0cWKuNsH7hLCs0YUYuHbVos5Ce0NHnTONk2HNUv47T\nM1cac1rDAqGxS11O8TQuT/oLkzAPKXEP9NHtnIe+j41DigAAAHSJtHmSZeGAOBgl7tJO9hq7pz40\n+NQKLdaBhOM3fEpC3LpiUZMWrOcUfkN/qvJcY4UAAAACOso3milYBzWsf8dsO5C4QIOHnC7T0LPN\nU2xGhkHXC74xsIzNvANcEGqomAJdqmudDtRhaTgbComzLsIaEEQhEJMlfw1jQeRxVQG8iT+Qy5oQ\n1vUuJV06GfrUT2HwZ+WcYHFiULRwDb7izsBjd6FIaQAAAAIdnFGZIKqFPr+s+qMhzdAGL4vsOLhO\n1R4k+4Zaw5y2yQuh06gr6GVU0JMqyQBgX/JLxXNBECWZFp3Imjnen+Bt\n"
+    "proofValue": "ABID/9+Br8GZYx2dh+QUvv1UTklrlqmFTS8c6kUtrrPWXZdAfqqv5qGs/aZDfGLkcs2Q5sCI6OKIdJzq7yDh8anKd4p1NO+L2LTHpV1El4Ng5SGxCbUxvCyAgaJa7Y8fgVlBFxSz+pz64ccisqCcRJEk3bS+4wLZ0evpsDMGZXbE4StMoDdHX4zOlGhoEPup329Hc8YAAAB0g/3iHtBeFCRgiww4JZ8gr3jEPnZTwYN7zSUfblPJGJFtEJ9cPA5RiiavNTuIK2WxAAAAAkqYiv29pCFxd2UQY+hFOs1hN053fIFadTyN5r2/Jb66VItDhtzI+piZ+TCzwiVPbMir935IRyrTDoHsA5MqvlCQTBtJ6tQpu+CXbVeqwK0JLRiFdxUlCh8tYm4MmWPZxxDSWPoSvW8HHg7IWswbwJkAAAADDnpdbKIwCgOxaMsr1cfkOit6Ohacg50iMkCwdxxRmtMYm9S4qWIZSvJxvQNHabukpqF7AHirvveODHRwaxXWc0bZm6PNyAotr6BRh1jDZE5ryNgW79ZuA3MfUT7q5ozf",
+    "verificationMethod": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01#21402a47-6416-4b95-b180-dff0e1f44d67"
   }
 }
