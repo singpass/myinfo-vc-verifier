@@ -218,8 +218,10 @@ MyInfoVcVerifier.verifyCredential = async function (credential, customDocuments)
  */
 MyInfoVcVerifier.verifyPresentation = async function (presentation, customDocuments) {
   let documentLoader = await getDocumentLoader(customDocuments);
+  let suite = [new jsonldSignatures.suites.Ed25519Signature2018()];
+
   const result = await jsonldSignatures.verify(presentation, {
-    suite: new jsonldSignatures.suites.Ed25519Signature2018(),
+    suite: suite,
     purpose: new jsonldSignatures.purposes.AssertionProofPurpose(),
     documentLoader,
   });
@@ -247,7 +249,11 @@ async function checkRevokeStatus(encoded, listIndex) {
  */
 MyInfoVcVerifier.getRevokeStatus = async function (signedVC, opts) {
   let encoded = await this.getEncodedList(signedVC, opts);
-  let result = await checkRevokeStatus(encoded, signedVC.credentialStatus.statusListIndex);
+  let index = signedVC.credentialStatus.statusListIndex;
+  if (typeof index == "string") {
+    index = parseInt(index);
+  }
+  let result = await checkRevokeStatus(encoded, index);
 
   return result;
 };
