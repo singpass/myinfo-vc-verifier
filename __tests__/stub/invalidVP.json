@@ -1,46 +1,99 @@
 {
   "@context": ["https://www.w3.org/2018/credentials/v1"],
-  "id": "http://example.org/presentations/3731",
+  "id": "did:key:z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx#vp-15cfeb06-c893-4a88-b2fd-2c6122db69d7",
   "type": ["VerifiablePresentation"],
-  "holder": "did:key:z6MkviRLMhsi2VDtFJENiMcbAb8zPBJGDz83catMyN7S2rgb",
+  "holder": "did:key:z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx",
   "verifiableCredential": [
     {
       "@context": [
         "https://w3id.org/security/bbs/v1",
         "https://www.w3.org/2018/credentials/v1",
-        "https://stg.issuer.myinfo.gov.sg/myinfo/schema/ageover/v1",
+        "https://stg.issuer.myinfo.gov.sg/myinfo/schema/age/v1",
         "https://w3id.org/vc/status-list/2021/v1"
       ],
-      "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/credentials/f5f19f68-3810-463f-8cdb-141aa48e4d4d",
-      "type": ["VerifiableCredential", "AgeOverCredential"],
+      "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/credentials/b2086515-619c-427c-b707-84f238764eac",
+      "type": ["VerifiableCredential", "AgeCredential"],
       "issuer": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01",
       "credentialSubject": {
-        "AtLeast18YearsOld": "N",
-        "type": ["AgeOver"],
-        "id": "did:key:z6MkmbvZd3XHsdti7ofTQkw1tDi9y9rEM6n1pkDDraQ9xrYW"
+        "AtLeast18YearsOld": true,
+        "AtLeast21YearsOld": true,
+        "type": ["Age"],
+        "id": "did:key:z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx"
       },
+      "name": "Age",
+      "description": "Age Over Indicators",
+      "expirationDate": "2025-08-21T06:51:34Z",
       "credentialStatus": {
-        "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1#9646",
+        "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1#10267",
         "type": "StatusList2021Entry",
-        "statusListIndex": "9646",
+        "statusListIndex": "10267",
         "statusListCredential": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1"
       },
-      "issuanceDate": "2023-07-12T06:04:47Z",
+      "issuanceDate": "2023-08-21T07:05:15Z",
       "proof": {
-        "created": "2023-07-12T06:04:47Z",
+        "created": "2023-08-21T07:05:15Z",
         "proofPurpose": "assertionMethod",
         "verificationMethod": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01#21402a47-6416-4b95-b180-dff0e1f44d67",
         "type": "BbsBlsSignatureProof2020",
-        "nonce": "jFH5GUADdg8igfuB6d4akCjIjPu815MNV2aBdzvdBhA=n",
-        "proofValue": "ABAA/7+L2u2nQCsPXmYde/7kDY494twd2AzECtzE+td28DrFC5o/ApGVGOZKdmR2lT8Vnwik1AeKnjME1DL9V6ZoLxqwRpKf0t/7Jj1zB2TX3S0a/lgdOrYNjF/mIKlZweHgr4UGqTqtK1sJMp/b0yR+znBOgVpyjOkdd1pMjP9P120/T3WAPuXrO0CYhuoFIZOwPQm5EAAAB0jT9KXaW4htzP3hTtoPbelCNMn8bt+7e+dnB1b0OQG97xYMwPFj+w8651uKxhu8nRUAAAAAgoEcB2TFKbGSCk3RwPXMcXMVeg84mKHnWmzBTJ86vYWoBXEJaI19y0ji3YKk4Dt8M4LzY2y9cR9RJzHxY0RKcwKWTGdXvYsQpsGMZ5wdbo19njWISewU/M8GSOAnYFFwbTlLz+tJDMJIe+k7IcoNJxeIAAAADEsYkRDoARh2XqfvsOF+H0fT+I+SEn8s5J7TsCdtRwQHcGV/MrFBM63XQkexbXyfzOcAcQnTCc8v23tjjfD/dL50L7SMB37/h20GBZ9H0YnZpE+TMK4LwiFkd1UXQST1swan"
+        "nonce": "KIr/YTYd9HGtHoHe4Nms3PjhxtjiW+xhVYrTcDgOqoc=",
+        "proofValue": "ABMH//+jbjXQAjbCiOj5Oh6lxFnP45WC4N675Xe8abpOzdN5h1zhxkFlNbas965ep5fqHIG3JGWmlaAe7jL9RqNHNSi5vPaOcnjIu0zHZA4dT9z98viovnPQG8GRoQWNCQllxS+lzW0ucRHG9ruNApHzOv+ESkoPU4/tBbZtm9HPQ8u00N/edXHC7HtkVSJzXSfFwe4AAAB0s+hWBhiH7v3AMi36Is6MvOHz55ZK5l9c8cjbkBqAXl0qt+mh5IACj7wlAeMgCNc8AAAAAhyzTjmFL9cRSLUkXsBAAGbdpZrQqDC1ehc35uonjj8SQv/JgYhlzO/c3e9JMWMj1GuMESzO/H2Slq22d/jFxwyPgKGEQ4I7S7sDrELuIsj3oINYz2e10uOBfDeSPCeAxGhcyG3Myy1mxRFwH50beHUAAAACPPmYj1uOXKtJAlu+FIt3J6q3ibYJ9+rcFXVPapwI8lQqPF7cpSwAE6A9kZbazXH46NkUV1KKec4Uz2l2wLagAg=="
+      }
+    },
+    {
+      "@context": [
+        "https://w3id.org/security/bbs/v1",
+        "https://www.w3.org/2018/credentials/v1",
+        "https://stg.issuer.myinfo.gov.sg/myinfo/schema/personal/v1",
+        "https://w3id.org/vc/status-list/2021/v1"
+      ],
+      "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/credentials/0ba368dd-f58a-4455-846f-365382ade416",
+      "type": ["VerifiableCredential", "PersonalCredential"],
+      "issuer": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01",
+      "credentialSubject": {
+        "uinfin": "S8703396A",
+        "name": "User S8703396A",
+        "aliasname": "",
+        "hanyupinyinname": "",
+        "hanyupinyinaliasname": "",
+        "marriedname": "",
+        "sex": "MALE",
+        "race": "AMERICAN",
+        "dob": "1990-04-19",
+        "residentialstatus": "CITIZEN",
+        "nationality": "GUINEAN",
+        "birthcountry": "UNITED STATES",
+        "regadd": {
+          "country": "SINGAPORE",
+          "postal": "609774"
+        },
+        "type": ["Personal"],
+        "id": "did:key:z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx"
+      },
+      "name": "Personal",
+      "description": "Basic Details of Personal Profile1",
+      "expirationDate": "2025-08-21T06:51:34Z",
+      "credentialStatus": {
+        "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1#10268",
+        "type": "StatusList2021Entry",
+        "statusListIndex": "10268",
+        "statusListCredential": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1"
+      },
+      "issuanceDate": "2023-08-21T07:05:20Z",
+      "proof": {
+        "created": "2023-08-21T07:05:20Z",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01#21402a47-6416-4b95-b180-dff0e1f44d67",
+        "type": "BbsBlsSignatureProof2020",
+        "nonce": "MfQWYAz9Ha+3ygEUmhlOkmdnAHyiskxvTI7Fc2fT2ac=",
+        "proofValue": "ACoAp//8fP+Y9rrEm2me6HlQOHtU7A1g6cR6Bvx31BXV4fbHtYFhhN1fTszqrlGwvERxYUTW8+eMJxa+7lmdfO3qXchUAQDHM/yiw8Tmy6bi4xnr/2WJCgmf/2GXWSEiOHrRRD0xgD2qlej+qs/X9v+VJ1vJxQMYaXUmTel5Zl9IZ8M3/F/oJ9tY+41MBa1gNkF/wKljshwAAAB0qkEdjkws3IUCtxdrNszurU0fzkoL2ataW/reLCMLHjtEqAuFEPO4JHOCPfYdlm0DAAAAAkp9+vIiTC4uvkIEIHHhVf2KZk1jtbo+U0poBHlOwzoNESJH1Q+70PdcEjIEWVfUGEBz0rAQinE6ueI6OQ10AjSRJvL/zjzpfzX7nLvXsK8UfmHkR2HHCaVF6kSRSsdkzNNycBdlenGE1Wy7jTac7NUAAAAMYJ2Y1euh+HilfjQjgl3gMKHAQBUmUg6Dy6TUaBYab8UP1/LGyOwRWveiPZcJJadp5sIeZsfrAZZ2hSVL6DMDoWsLqKn2BkKJpUhSgaMtPcwdE7PhGst/GPWk/kTgJzNfHnI5w3xFUM0mvhM8guSKY+xK9Bs/rTXTItiM/+k8K9ZS3jmsE3JhgKs+xmLQYX29AeVUJGHOLhWE2yqXnCUE/lJ2te5o2FvDh9VPm/4EwpZY4R0SF1esqW0MlCjle657Q6AvK+sGO73ECxxilTP3SCXnLFSMrn/2ov1c6mA9iL5Yo/p8CwP731mTLd+3vUVZTreK87WVmlQuAMQA5Lm3PyPGDEeAIBlbpdVyZs6w8hlOAYzMHXj5wyrNNf5Pbz/lXNxtZhH99jAdGyL+SQU0RiUiz7mV9kTlcLRQxqocQhhwevc1PkF8O2Y8gdLlGXR+NiHEOX39hvY0E2BccpnnmzOnTNUZOGCORU7CsZDz1YdkKCrFpFy7w6blF5D99saq"
       }
     }
   ],
   "proof": {
     "type": "Ed25519Signature2018",
-    "created": "2023-07-12T07:29:48Z",
+    "created": "2023-08-22T06:47:00Z",
     "proofPurpose": "assertionMethod",
-    "verificationMethod": "did:key:z6MkviRLMhsi2VDtFJENiMcbAb8zPBJGDz83catMyN7S2rgb#z6MkviRLMhsi2VDtFJENiMcbAb8zPBJGDz83catMyN7S2rgb",
-    "jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..6MVcOV40KpeAJk_rm9R3YogNM4ae1CjYBEvIpdzshF_meCS_HnZ_JGLkDo96USAy712J-vMKRYUjIGOMX1s_AA"
+    "verificationMethod": "did:key:z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx#z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx",
+    "jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..pTydH1ytitQ_FiblmcgsqZC0vxjNp-GpQNbruCO9d9dPC1xUGYoWjitAv0St8zyJgmJ_aFcvXnGuAANIaZJGCw"
   }
 }

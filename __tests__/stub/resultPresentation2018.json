@@ -5,25 +5,25 @@
       "proof": {
         "@context": "https://w3id.org/security/v2",
         "type": "Ed25519Signature2018",
-        "created": "2023-07-12T09:13:45Z",
-        "jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..-9UOZ1jVRQBq9xPqY6FjPCR_ORMXCSohGV6-rH2WPnIrSAXlPQmAMoDCyvVGg_DvOm_HnBlRKbxKtzseFyJqAw",
+        "created": "2023-08-22T06:47:00Z",
+        "jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJFZERTQSJ9..pTydH1ytitQ_FiblmcgsqZC0vxjNp-GpQNbruCO9d9dPC1xUGYoWjitAv0St8zyJgmJ_aFcvXnGuAANIaZJGCw",
         "proofPurpose": "assertionMethod",
-        "verificationMethod": "did:key:z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi#z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi"
+        "verificationMethod": "did:key:z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx#z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx"
       },
       "verified": true,
       "purposeResult": {
         "valid": true,
         "controller": {
           "@context": "https://w3id.org/security/v2",
-          "id": "did:key:z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi",
+          "id": "did:key:z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx",
           "assertionMethod": [
-            "did:key:z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi#z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi"
+            "did:key:z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx#z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx"
           ],
           "verificationMethod": {
-            "id": "did:key:z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi#z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi",
             "type": "Ed25519VerificationKey2018",
-            "controller": "did:key:z6MkjKd2Kxfec5tG8zzDyLdQjE5veLboL3uaxJHFp2NdA1gi",
-            "publicKeyBase58": "5sMyjiRDGYPo2W9XHmfZt8XvpmKwvAfEGHNKykQcEnuL"
+            "controller": "did:key:z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx",
+            "id": "did:key:z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx#z6MkfJVf63AcEoiL9CJJ2r76eZL3dS9QugWk5cDWCYp9raYx",
+            "publicKeyBase58": "rEcVnvAuGDs2hTbMH9FoTn3orsZVoGPPbJaNGr8wMma"
           }
         }
       }
