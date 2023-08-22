@@ -71,4 +71,4 @@ MyInfoVcVerifier.ethereumSign(privateKey, message);
 
 ## Reporting Issue
 
-You may contact our [support](mailto:support@myinfo.gov.sg?subject=[MyInfoLib-NodeJs]%20Issue%20) for any other technical issues, and we will respond to you within 5 working days.
+You may contact our [support](mailto:support@myinfo.gov.sg?subject=[MyInfoVcVerifier-NodeJs]%20Issue%20) for any other technical issues, and we will respond to you within 5 working days.

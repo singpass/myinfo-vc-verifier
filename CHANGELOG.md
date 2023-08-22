@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.7 22 Aug 2023:
+
+- Fix test stub data
+- Update npm @cypress/request to @3.0.0
+
 ## 0.0.6 12 Jul 2023:
 
 - Fix getRevokeStatus function to parseInt for statusListIndex if it is a String
