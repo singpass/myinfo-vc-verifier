@@ -273,4 +273,19 @@ MyInfoVcVerifier.ethereumSign = function (privateKey, message) {
   return rpcSignature.substring(2, rpcSignature.length);
 };
 
+/**
+ * [VC Expiration Check]
+ * @param  {Object} VerifiableCredential object [signed verifiable credential]
+ * @return {Boolean} [the expiration status] TRUE - expired, False - Not expired
+ */
+MyInfoVcVerifier.getExpirationStatus = function (credential) {
+  if (credential.expirationDate) {
+    let now = Date.now();
+    let expirationDate = new Date(credential.expirationDate).getTime();
+    return now > expirationDate;
+  } else {
+    throw "No expirationDate";
+  }
+};
+
 module.exports = MyInfoVcVerifier;

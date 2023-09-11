@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.8 11 Sep 2023:
+
+- Add getExpirationStatus function
+
 ## 0.0.7 22 Aug 2023:
 
 - Fix test stub data

@@ -3,6 +3,8 @@ const MyInfoVcVerifier = require("../index.js");
 
 //stub data
 const signedVC = require("./stub/signedVC.json");
+const expiredVC = require("./stub/expiredVC.json");
+const notExpiredVC = require("./stub/notExpiredVC.json");
 const invalidVC = require("./stub/invalidVC.json");
 const revokedVC = require("./stub/revokedVC.json");
 const verifyresult = require("./stub/result.json");
@@ -94,4 +96,14 @@ describe("Test VC verifier", () => {
     const result = await MyInfoVcVerifier.verify(signedSDVC);
     expect(result.verified).toStrictEqual(true);
   }, 5000);
+
+  it("should validate expirationStatus as expired", async () => {
+    const result = MyInfoVcVerifier.getExpirationStatus(expiredVC);
+    expect(result).toStrictEqual(true);
+  });
+
+  it("should validate expirationStatus as not expired", async () => {
+    const result = MyInfoVcVerifier.getExpirationStatus(notExpiredVC);
+    expect(result).toStrictEqual(false);
+  });
 });
