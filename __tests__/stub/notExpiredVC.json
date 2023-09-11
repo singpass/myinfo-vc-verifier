@@ -1,0 +1,60 @@
+{
+  "credentialSubject": {
+    "birthcountry": "SINGAPORE",
+    "passtype": "",
+    "race": "CHINESE",
+    "passexpirydate": "",
+    "regadd": {
+      "country": "SINGAPORE",
+      "unit": "340",
+      "street": "WOODLANDS RING ROAD",
+      "block": "635",
+      "id": "urn:bnid:_:c14n0",
+      "postal": "730635",
+      "floor": "17",
+      "building": ""
+    },
+    "sex": "FEMALE",
+    "employmentsector": "INFORMATION TECHNOLOGY",
+    "employment": "GOVTECH PTE LTD",
+    "residentialstatus": "CITIZEN",
+    "type": "Personal",
+    "hanyupinyinname": "",
+    "hanyupinyinaliasname": "",
+    "marriedname": "",
+    "aliasname": "CLARISSA DEWANARA VANASAMIN",
+    "passstatus": "",
+    "uinfin": "S9590367C",
+    "nationality": "SINGAPORE CITIZEN",
+    "dob": "1950-04-19",
+    "name": "Lim Mark",
+    "id": "did:key:z6MkkuJtybrsUYQvS3UsF3a2amMzs9MraCGdn9etp4afaDN8"
+  },
+  "issuanceDate": "2023-09-08T04:28:57Z",
+  "name": "Personal",
+  "description": "Basic Details of Personal Profile",
+  "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/credentials/3dbfdc79-d4c5-4601-b46d-b851583c9452",
+  "proof": {
+    "proofPurpose": "assertionMethod",
+    "proofValue": "ACoD//////+4U1nfSoiA1Yg+i6YeTPYCYjTDHe4a7gGvTg6naxQiaLoSen3TCzFOM44FWHxJSYG4i7EfLsKyL0mrmbYTQiIomvA0Lc2z3S12c5J7N+IWmdCONfFAmwgT5nU2CUquZYmGNU/77Ptw5qNwqhxImHJLp2iuqLXTxRuHo6HddgIDTNyNCqAVHQzy2Zp/+tklhW8AAAB0gPiVrF7UKsJXkKDu6xJZZK2jWSjBtnUxnip1lXTFlOJpXgfVaIGxXgAhV052/GuEAAAAAjPHaHNm4IVYFfR1+/lEu2tRohAbE9E5TzDyNo4jDBrnINn28EKTsoy8Zqt6q3KjyjJC99WP4vtSypUEFvewo0iANZ9VVX3AmKOchx3Lakfkm6FLy1i+HP4BePJL7glRfkk9+3RMsC5IJZMmxWEghsgAAAACE8uk6ZnI2edZzoLVyUEt6RT+qxL4KoYrD/xYTXDYkr0MZY3Sb5GwtxHgkGkgxA32hMPzFFkACOj697lpVQrtag==",
+    "type": "BbsBlsSignatureProof2020",
+    "verificationMethod": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01#21402a47-6416-4b95-b180-dff0e1f44d67",
+    "nonce": "4clK7QibKG8Qsg0TvN1xLeXWXqBkTCe4d0M2EKyKMxwl4kDynGq00m7hMoO5OevuSHk=",
+    "created": "2023-09-08T04:28:57Z"
+  },
+  "type": ["PersonalCredential", "VerifiableCredential"],
+  "@context": [
+    "https://w3id.org/security/bbs/v1",
+    "https://www.w3.org/2018/credentials/v1",
+    "https://stg.issuer.myinfo.gov.sg/myinfo/schema/personal/v1",
+    "https://w3id.org/vc/status-list/2021/v1"
+  ],
+  "issuer": "did:web:stg.issuer.myinfo.gov.sg:myinfo202304-01",
+  "credentialStatus": {
+    "statusListIndex": "10908",
+    "id": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1#10908",
+    "statusListCredential": "https://stg.issuer.myinfo.gov.sg/myinfo202304-01/status/1",
+    "type": "StatusList2021Entry"
+  },
+  "expirationDate": "2025-09-08T04:28:41Z"
+}
