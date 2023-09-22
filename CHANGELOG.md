@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0 22 Sept 2023:
+
+- Add in VP and VC verification for did:key to ensure VC did:key matches with VP did:key
+
 ## 0.0.8 11 Sep 2023:
 
 - Add getExpirationStatus function

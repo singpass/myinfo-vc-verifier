@@ -220,12 +220,36 @@ MyInfoVcVerifier.verifyPresentation = async function (presentation, customDocume
   let documentLoader = await getDocumentLoader(customDocuments);
   let suite = [new jsonldSignatures.suites.Ed25519Signature2018()];
 
+  if (!this.verifyPresentationAndCredentialDidKey(presentation)) {
+    return {
+      verified: false,
+    };
+  }
+
   const result = await jsonldSignatures.verify(presentation, {
     suite: suite,
     purpose: new jsonldSignatures.purposes.AssertionProofPurpose(),
     documentLoader,
   });
   return result;
+};
+
+/**
+ * [Verify Presentation and Credential Did Key]
+ * @param  {Object} Verifiable Presentation object [signed verifiable presentation]
+ * @return {Boolean} [Did Key Verification Status] TRUE - did:key matches, FALSE - did:key does not match
+ */
+MyInfoVcVerifier.verifyPresentationAndCredentialDidKey = (presentation) => {
+  let vpVerificationMethod = presentation.proof.verificationMethod;
+  let vpDidKey = vpVerificationMethod.split("#")[0];
+
+  for (let vc of presentation.verifiableCredential) {
+    if (vc.credentialSubject.id !== vpDidKey) {
+      return false;
+    }
+  }
+
+  return true;
 };
 
 /**
