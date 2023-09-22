@@ -9,6 +9,7 @@ const invalidVC = require("./stub/invalidVC.json");
 const revokedVC = require("./stub/revokedVC.json");
 const verifyresult = require("./stub/result.json");
 const signedVP2018 = require("./stub/signedVP2018.json");
+const didKeyInvalidVP2018 = require("./stub/didKeyInvalidVP2018.json");
 const invalidVP = require("./stub/invalidVP.json");
 const verifyPresentationResult2018 = require("./stub/resultPresentation2018.json");
 const signedSDVC = require("./stub/signedSelectiveDisclosedVC.json");
@@ -97,13 +98,23 @@ describe("Test VC verifier", () => {
     expect(result.verified).toStrictEqual(true);
   }, 5000);
 
-  it("should validate expirationStatus as expired", async () => {
+  it("should validate expirationStatus as expired (true)", async () => {
     const result = MyInfoVcVerifier.getExpirationStatus(expiredVC);
     expect(result).toStrictEqual(true);
   });
 
-  it("should validate expirationStatus as not expired", async () => {
+  it("should validate expirationStatus as not expired (false)", async () => {
     const result = MyInfoVcVerifier.getExpirationStatus(notExpiredVC);
+    expect(result).toStrictEqual(false);
+  });
+
+  it("should verify did:key verificationStatus as matches (true)", async () => {
+    const result = MyInfoVcVerifier.verifyPresentationAndCredentialDidKey(signedVP2018);
+    expect(result).toStrictEqual(true);
+  });
+
+  it("should verify did:key verificationStatus as does not matches (false)", async () => {
+    const result = MyInfoVcVerifier.verifyPresentationAndCredentialDidKey(didKeyInvalidVP2018);
     expect(result).toStrictEqual(false);
   });
 });
