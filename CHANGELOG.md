@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 11 Oct 2023:
+
+- Add static w3 credentials v1 context file to default documents
+
 ## 0.1.0 22 Sept 2023:
 
 - Add in VP and VC verification for did:key to ensure VC did:key matches with VP did:key
