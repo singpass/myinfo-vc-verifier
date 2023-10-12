@@ -9,6 +9,7 @@ const bs58 = require("bs58");
 let documents = {
   "https://w3id.org/security/bbs/v1": require("./contextData/w3id-sec-bbs-v1.json"),
   "https://w3id.org/did/v0.11": require("./contextData/w3id-did-v0.11.json"),
+  "https://www.w3.org/2018/credentials/v1": require("./contextData/w3-credentials-v1.json"),
 };
 
 let MyInfoVcVerifier = {};
